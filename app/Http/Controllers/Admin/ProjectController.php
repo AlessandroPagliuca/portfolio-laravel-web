@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Tool;
-use App\Http\Requests\StoreToolRequest;
-use App\Http\Requests\UpdateToolRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Project;
+use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 
-class ToolController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +32,10 @@ class ToolController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreToolRequest  $request
+     * @param  \App\Http\Requests\StoreProjectRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreToolRequest $request)
+    public function store(StoreProjectRequest $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class ToolController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Tool  $tool
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Tool $tool)
+    public function show(Project $project)
     {
         //
     }
@@ -53,10 +54,10 @@ class ToolController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Tool  $tool
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tool $tool)
+    public function edit(Project $project)
     {
         //
     }
@@ -64,11 +65,11 @@ class ToolController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateToolRequest  $request
-     * @param  \App\Models\Tool  $tool
+     * @param  \App\Http\Requests\UpdateProjectRequest  $request
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateToolRequest $request, Tool $tool)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
         //
     }
@@ -76,10 +77,10 @@ class ToolController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Tool  $tool
+     * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tool $tool)
+    public function destroy(Project $project)
     {
         //
     }
