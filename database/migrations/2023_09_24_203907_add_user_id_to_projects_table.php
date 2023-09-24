@@ -12,15 +12,10 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
-            $table->id();
-            $table->string('title', 100);
-            $table->string('slug');
-            $table->text('description');
-            $table->text('url_github');
-            $table->string('main_img');
-            $table->boolean('visible');
-            $table->timestamps();
+        Schema::table('projects', function (Blueprint $table) {
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
+
         });
     }
 
@@ -31,6 +26,9 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::table('projects', function (Blueprint $table) {
+            $table->dropForeign('projects_user_id_foreign');
+            $table->dropColumn('user_id'); //
+        });
     }
 };

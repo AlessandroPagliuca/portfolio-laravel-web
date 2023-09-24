@@ -12,14 +12,13 @@ return new class extends Migration {
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('project_tool', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100);
-            $table->string('slug');
-            $table->text('description');
-            $table->text('url_github');
-            $table->string('main_img');
-            $table->boolean('visible');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projects')->cascadeOnDelete();
+
+            $table->unsignedBigInteger('tool_id');
+            $table->foreign('tool_id')->references('id')->on('tools')->cascadeOnDelete();
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ return new class extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('project_tool');
     }
 };
